@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <title>Random Quotes Machine</title>
+    <script>
+      const QUOTEBANK = [
+        {
+          quote:
+            "Travel is fatal to prejudice, bigotry, and narrow-mindedness.",
+          author: "Mark Twain",
+        },
+        {
+          quote: "Good luck and don’t mess it up.",
+          author: "Rupaul",
+        },
+        {
+          quote: "I'm the bbh, the bad bitch herself.",
+          author: "Me Myself",
+        },
+        {
+          quote:
+            "The secret of success in every field is redefining what success means to you.",
+          author: "Mama Ru",
+        },
+        {
+          quote:
+            "Build your own dreams, or someone else will hire you to build theirs.",
+          author: "Farrah Gray",
+        },
+        {
+          quote:
+            "The battles that count aren’t the ones for gold medals. The struggles within yourself–the invisible battles inside all of us–that’s where it’s at.",
+          author: "Jesse Owens",
+        },
+        {
+          quote: "Education costs money.  But then so does ignorance.",
+          author: "Sir Claus Moser",
+        },
+        {
+          quote:
+            "I have learned over the years that when one’s mind is made up, this diminishes fear.",
+          author: "Rosa Parks",
+        },
+        {
+          quote:
+            "It does not matter how slowly you go as long as you do not stop.",
+          author: "Confucius",
+        },
+        {
+          quote:
+            "If you look at what you have in life, you’ll always have more. If you look at what you don’t have in life, you’ll never have enough.",
+          author: "Oprah Winfrey",
+        },
+        {
+          quote:
+            "Remember that not getting what you want is sometimes a wonderful stroke of luck.",
+          author: "Dalai Lama",
+        },
+      ];
+      window.onload = init;
+      function init() {
+        generateQuote();
+      }
+      function generateQuote() {
+        let quoteSize = QUOTEBANK.length;
+        let randomIndex = Math.floor(Math.random() * quoteSize);
+        let randomQuoteData = QUOTEBANK[randomIndex];
+        document.getElementById("text").innerText = randomQuoteData.quote;
+        document.getElementById("author").innerText = randomQuoteData.author;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row py-5">
+        <div class="col-md-6 offset-md-3">
+          <wrapper id="quote-box">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title"><div id="text"></div></h5>
+                <div class="card-text">
+                  <div id="author"></div>
+                </div>
+                <button
+                  id="new-quote"
+                  onClick="generateQuote()"
+                  class="btn btn-success"
+                >
+                  New Quote
+                </button>
+                <a
+                  href="twitter.com/intent/tweet"
+                  id="tweet-quote"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >Tweet Quote</a
+                >
+              </div>
+              <div class="card-footer text-muted">Coded by Jenny Yang Lin</div>
+            </div>
+          </wrapper>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+      integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+      integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
